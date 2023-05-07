@@ -1,3 +1,9 @@
-# test-project
+# Портфолио - инженер по тестированию
 
-This is a test README
+About me. About this repository.
+
+My skills and stack.
+
+Contacts.
+
+Links for student projects with short description.
