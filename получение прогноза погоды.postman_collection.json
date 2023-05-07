@@ -1,0 +1,428 @@
+{
+	"info": {
+		"_postman_id": "f5944e13-2b29-4096-8e48-d68da01b9826",
+		"name": "получение прогноза погоды",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21045951",
+		"_collection_link": "https://dark-meadow-878510.postman.co/workspace/%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81-%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0~c540c511-1805-4f8a-ab80-205294b223e5/collection/21045951-f5944e13-2b29-4096-8e48-d68da01b9826?action=share&creator=21045951&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "прогноз на 1 день почасовой extra",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weather.yandex.ru/v2/forecast?lat=55&lon=50&lang=ru_RU&limit=1&hours=true&extra=true",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weather",
+						"yandex",
+						"ru"
+					],
+					"path": [
+						"v2",
+						"forecast"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "55"
+						},
+						{
+							"key": "lon",
+							"value": "50"
+						},
+						{
+							"key": "lang",
+							"value": "ru_RU"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "hours",
+							"value": "true"
+						},
+						{
+							"key": "extra",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "прогноз на 2 дня почасовой",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weather.yandex.ru/v2/forecast?lat=55&lon=50&lang=ru_RU&limit=2&hours=true&extra=false",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weather",
+						"yandex",
+						"ru"
+					],
+					"path": [
+						"v2",
+						"forecast"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "55"
+						},
+						{
+							"key": "lon",
+							"value": "50"
+						},
+						{
+							"key": "lang",
+							"value": "ru_RU"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "hours",
+							"value": "true"
+						},
+						{
+							"key": "extra",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "прогноз на 6 дней extra",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weather.yandex.ru/v2/forecast?lat=55&lon=50&lang=ru_RU&limit=6&hours=false&extra=true",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weather",
+						"yandex",
+						"ru"
+					],
+					"path": [
+						"v2",
+						"forecast"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "55"
+						},
+						{
+							"key": "lon",
+							"value": "50"
+						},
+						{
+							"key": "lang",
+							"value": "ru_RU"
+						},
+						{
+							"key": "limit",
+							"value": "6"
+						},
+						{
+							"key": "hours",
+							"value": "false"
+						},
+						{
+							"key": "extra",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "прогноз на 7 дней",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weather.yandex.ru/v2/forecast?lat=55&lon=50&lang=ru_RU&limit=7&hours=false&extra=false",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weather",
+						"yandex",
+						"ru"
+					],
+					"path": [
+						"v2",
+						"forecast"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "55"
+						},
+						{
+							"key": "lon",
+							"value": "50"
+						},
+						{
+							"key": "lang",
+							"value": "ru_RU"
+						},
+						{
+							"key": "limit",
+							"value": "7"
+						},
+						{
+							"key": "hours",
+							"value": "false"
+						},
+						{
+							"key": "extra",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "запрос с некорректным параметром lat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weather.yandex.ru/v2/forecast?lat=puU&lon=50&lang=ru_RU&limit=1&hours=false&extra=false",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weather",
+						"yandex",
+						"ru"
+					],
+					"path": [
+						"v2",
+						"forecast"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "puU"
+						},
+						{
+							"key": "lon",
+							"value": "50"
+						},
+						{
+							"key": "lang",
+							"value": "ru_RU"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "hours",
+							"value": "false"
+						},
+						{
+							"key": "extra",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "запрос с некорректным параметром lon",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weather.yandex.ru/v2/forecast?lat=55&lon=181&lang=ru_RU&limit=1&hours=false&extra=false",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weather",
+						"yandex",
+						"ru"
+					],
+					"path": [
+						"v2",
+						"forecast"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "55"
+						},
+						{
+							"key": "lon",
+							"value": "181"
+						},
+						{
+							"key": "lang",
+							"value": "ru_RU"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "hours",
+							"value": "false"
+						},
+						{
+							"key": "extra",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "прогноз на 0 дней",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is not 200, there's an error\", function () {\r",
+							"    pm.response.to.not.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weather.yandex.ru/v2/forecast?lat=55&lon=50&lang=ru_RU&limit=0&hours=false&extra=false",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weather",
+						"yandex",
+						"ru"
+					],
+					"path": [
+						"v2",
+						"forecast"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "55"
+						},
+						{
+							"key": "lon",
+							"value": "50"
+						},
+						{
+							"key": "lang",
+							"value": "ru_RU"
+						},
+						{
+							"key": "limit",
+							"value": "0"
+						},
+						{
+							"key": "hours",
+							"value": "false"
+						},
+						{
+							"key": "extra",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{apiKey}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "X-Yandex-API-Key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiKey",
+			"value": "f19940d7-b43b-4eb4-88f6-ecc06919b73c",
+			"type": "string"
+		}
+	]
+}
