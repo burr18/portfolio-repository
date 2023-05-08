@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "390dda0b-290c-4d88-8900-ca0ffb50f4ca",
+		"name": "Диплом",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21045951"
+	},
+	"item": [
+		{
+			"name": "Открыть страницу с видео по разделам",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{teacherToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api-vimbox.skyeng.ru/api/v1/compilations/showcase",
+					"protocol": "https",
+					"host": [
+						"api-vimbox",
+						"skyeng",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"compilations",
+						"showcase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Открыть страницу с видео по разделам без токена авторизации",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-vimbox.skyeng.ru/api/v1/compilations/showcase",
+					"protocol": "https",
+					"host": [
+						"api-vimbox",
+						"skyeng",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"compilations",
+						"showcase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Открыть раздел \"Видеопрактика\"",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{teacherToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://vimbox.skyeng.ru/video",
+					"protocol": "https",
+					"host": [
+						"vimbox",
+						"skyeng",
+						"ru"
+					],
+					"path": [
+						"video"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "teacherToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
